@@ -30,11 +30,12 @@ function onEdit(e) {
     editCol >= rangeColStart &&
     editCol <= rangeColEnd
   ) {
-    const no = val[editRow - 1][editCol - 6];
-    const name = val[editRow - 1][editCol - 5];
-    const address = val[editRow - 1][editCol - 4];
-    const dateSend = val[editRow - 1][editCol - 3];
-    const timeSend = val[editRow - 1][editCol - 2];
+    const no = val[editRow - 1][editCol - 7];
+    const name = val[editRow - 1][editCol - 6];
+    const address = val[editRow - 1][editCol - 5];
+    const dateSend = val[editRow - 1][editCol - 4];
+    const timeSend = val[editRow - 1][editCol - 3];
+    const statusSend = val[editRow - 1][editCol - 2];
 
     // const linenotify = val[editRow - 1][editCol - 1];
 
@@ -43,7 +44,8 @@ function onEdit(e) {
       `ชื่อ-นามสกุล : ${name}\n` +
       `ที่อยู่: ${address}\n` +
       `วันที่ยืนยัน : ${dateSend}\n` +
-      `เวลาที่ยืนยัน : ${timeSend}`;
+      `เวลาที่ยืนยัน : ${timeSend}\n` +
+      `สถานะงาน : ${statusSend}`;
 
     const response = ui.alert(
       `${'ยืนยันการ Confirm เพื่อส่ง Line ?'}\n${msg}`,

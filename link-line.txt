@@ -1,0 +1,10 @@
+statusSend : 1V928TnMT-SZKCa-vwRRY7MZnXXo7wtuBDFN_ps-iHmA
+LINE_CHANEL_ACCESS_TOKEN : 6lNRLf3obwx2Jq2u6kuoPvdLrQlW60BoMeo3OcX7j66MYVpT8B0tAO0w27n6STlTQjH6aF5xRNysMr4fCqy1JF3TGBvt56
+LINE_DEFAULT_GROUP_ID : C2658d792c454380a6a307a357fa8850c
+LINE_MESSAGE_REPLY_URL : https://api.line.me/v2/bot/message/reply
+LINE_NOTIFY_TOKEN : yxoTlRxphhl0rNb5TPVysCnlAL8O7HfItEhXazltNS9
+LINE_NOTIFY_URL : https://notify-api.line.me/api/notify
+LINE_PUSH_MESSAGE_URL : https://api.line.me/v2/bot/message/push
+
+
+
