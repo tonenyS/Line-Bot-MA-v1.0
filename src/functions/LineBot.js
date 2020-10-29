@@ -147,31 +147,32 @@ function quickReplyMessage(title, items) {
     return quickStructure;
 }
 
-function pushMsg(Msg,groupId = "") {
-
-    if(groupId.trim() === ""){
-        groupId = PropertiesService.getScriptProperties().getProperty('LINE_DEFAULT_GROUP_ID').toString();
+function pushMessage(message, groupId = '') {
+    if (groupId.trim() === '') {
+        groupId = PropertiesService.getScriptProperties()
+            .getProperty('LINE_DEFAULT_GROUP_ID')
+            .toString();
     }
     var postData = {
-      "to": groupId,
-      "messages" : [
-        {
-          "type" : "text",
-          "text" : Msg
-        }
-      ]
+        to: groupId,
+        messages: [{
+            type: 'text',
+            text: message,
+        }, ],
     };
     var options = {
-      "method" : "post",
-      "headers" : {
-        "Content-Type" : "application/json",
-        "Authorization" : "Bearer " + PropertiesService.getScriptProperties().getProperty('LINE_CHANEL_ACCESS_TOKEN').toString(),
-      },
-      "payload" : JSON.stringify(postData)
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' +
+                PropertiesService.getScriptProperties().getProperty('LINE_CHANEL_ACCESS_TOKEN').toString(),
+        },
+        payload: JSON.stringify(postData),
     };
-    UrlFetchApp.fetch(PropertiesService.getScriptProperties().getProperty('LINE_PUSH_MESSAGE_URL').toString(), options);
-  }
+    UrlFetchApp.fetch(
+        PropertiesService.getScriptProperties().getProperty('LINE_PUSH_MESSAGE_URL').toString(),
+        options
+    );
+}
 
-
-
-export { sendLineNotify, replyMessage, MESSAGE_TYPE, getUserProfile ,pushMsg};
+export { sendLineNotify, replyMessage, MESSAGE_TYPE, getUserProfile, pushMessage };
