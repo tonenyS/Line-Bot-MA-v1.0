@@ -15,11 +15,62 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
     <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-    <title>Index</title>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>
+    $.fn.serializeObject = function() {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function() {
+            if (o[this.name]) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
+
+function SubForm (){
+    console.log(JSON.stringify({data: [$("#myForm").serializeObject()]}));
+    $.ajax({
+        url:'https://script.google.com/macros/s/AKfycbwEipBcQtL5azEB_Q063Bcqr2pFwYCjve6zWbGqrUta0Q1tU39k/exec',
+        type:'post',
+        data:JSON.stringify({data: [$("#myForm").serializeObject()]}),
+        success: function(){
+          alert("Form Data Submitted :)")
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+    });
+}
+</script>
 </head>
-
 <body>
-
+  <form id="myForm">
+    <label>Full Name</label>
+    <br/>
+    <input name="FullName" />
+    <br/>
+    <label>Address</label>
+    <br/>
+    <input name="Address" />
+    <br/>
+    <label>Confirmation date</label>
+    <br/>
+    <input name="Confirmation date" />
+    <br/>
+    <label>Confirmation time</label>
+    <br/>
+    <input name="Confirmation time" />
+    <br/>
+  </form>
+  <button onclick="SubForm()">Submit</button>
 </body>
-
 </html>

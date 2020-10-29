@@ -172,4 +172,6 @@ function pushMsg(Msg,groupId = "") {
     UrlFetchApp.fetch(PropertiesService.getScriptProperties().getProperty('LINE_PUSH_MESSAGE_URL').toString(), options);
   }
 
+
+
 export { sendLineNotify, replyMessage, MESSAGE_TYPE, getUserProfile ,pushMsg};
