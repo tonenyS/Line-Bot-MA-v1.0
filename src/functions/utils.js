@@ -44,7 +44,7 @@ const render = (file, argsObject) => {
             tmp[key] = argsObject[key];
         });
     }
-    return tmp.evaluate().setTitle("- 🕵️‍♀️ Project List -")
+    return tmp.evaluate().setTitle("- 🕵️‍♀️ Project MA -")
         .setFaviconUrl("https://raw.githubusercontent.com/ggafiled/googlesheet_appscript_project_list/master/img/favicon.ico");
 }
 
