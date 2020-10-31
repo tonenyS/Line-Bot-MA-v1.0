@@ -91,8 +91,8 @@ export default function (e) {
         `ที่อยู่ : ${address}\n` +
         `อาคาร : ${Building}\n` +
         `เลข Circoit : ${NumberCircoit}\n` +
-        `วันที่ยืนยัน : ${dateSend}\n` +
-        `เวลาที่ยืนยัน : ${timeSend}`;
+        `วันที่ยืนยัน : ${new Date(dateSend).toLocaleDateString('th-TH')}\n` +
+        `เวลาที่ยืนยัน : ${new Date(timeSend).toLocaleTimeString('th-TH')}`;
 
       const response = ui.alert(
         `${'ส่งสถานะงานปัจจุบัน ผ่านทาง Line ?'}\n${msg}`,

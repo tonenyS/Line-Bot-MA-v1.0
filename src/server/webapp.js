@@ -19,15 +19,15 @@ const doGet = (e) => {
 
 const doPost = (e) => {
   try {
-    const Agent = Tamotsu.Table.define({
-      sheetName: 'AIS',
-      rowShift: 1,
-      columnShift: 0,
-    });
-
     const data = JSON.parse(e.postData.contents);
     Logger.log(`saveNewData(): ${JSON.stringify(data)}`);
     Logger.log(`saveNewData() name: ${data.Full_Name}`);
+
+    const Agent = Tamotsu.Table.define({
+      sheetName: data.sheetname,
+      rowShift: 1,
+      columnShift: 0,
+    });
 
     const lastRow = Agent.last();
     Logger.log(`saveNewData() lastRow: ${JSON.stringify(lastRow)}`);
@@ -39,15 +39,15 @@ const doPost = (e) => {
       Address: data.Address,
       Building: data.Building,
       NumberCircoit: data.NumberCircoit,
-      'Confirmation date': data.Confirmation_date,
-      'Confirmation time': data.Confirmation_time,
-      'ยืนยัน ส่งLINE': '',
+      Confirmationdate: data.Confirmation_date,
+      Confirmationtime: data.Confirmation_time,
+      'ยืนยันส่ง LINE': '',
       หมายเหตุ: '',
     });
 
     // Create new checkbox with initail value (false).
     SpreadsheetApp.getActive()
-      .getSheetByName('AIS')
+      .getSheetByName(data.sheetname)
       .getRange(`H${lastRow.row_}:H${lastRow.row_}`)
       .setDataValidation(
         SpreadsheetApp.newDataValidation().setAllowInvalid(false).requireCheckbox().build()
@@ -55,7 +55,7 @@ const doPost = (e) => {
 
     // Create new dropdown list with values in list ['Opened', 'In Progress', 'Close'] and set initail value (Opened)
     SpreadsheetApp.getActive()
-      .getSheetByName('AIS')
+      .getSheetByName(data.sheetname)
       .getRange(`I${lastRow.row_}:I${lastRow.row_}`)
       .setDataValidation(
         SpreadsheetApp.newDataValidation()
@@ -63,7 +63,7 @@ const doPost = (e) => {
           .build()
       );
     SpreadsheetApp.getActive()
-      .getSheetByName('AIS')
+      .getSheetByName(data.sheetname)
       .getRange(`I${lastRow.row_}:I${lastRow.row_}`)
       .setValue('Opened');
   } catch (error) {
