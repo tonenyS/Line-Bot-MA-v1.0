@@ -1,4 +1,4 @@
-import { doGet, doPost } from './server/webapp';
+import { doGet, doPost, saveDataToSpreadsheet } from './server/webapp';
 import onEdit from './server/trigger';
 
 // eslint-disable-next-line no-global-assign
@@ -10,5 +10,7 @@ Tamotsu.initialize();
 
 global.doGet = doGet;
 global.doPost = doPost;
+
+global.saveDataToSpreadsheet = saveDataToSpreadsheet;
 
 global.onEdit = onEdit;

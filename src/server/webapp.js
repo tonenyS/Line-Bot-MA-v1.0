@@ -19,9 +19,20 @@ const doGet = (e) => {
 
 const doPost = (e) => {
   try {
-    const data = JSON.parse(e.postData.contents);
-    Logger.log(`saveNewData(): ${JSON.stringify(data)}`);
-    Logger.log(`saveNewData() name: ${data.Full_Name}`);
+    // TO DO SOMETHINGS...
+  } catch (error) {
+    Logger.log(`saveNewData(): error ${error}`);
+  }
+  return ContentService.createTextOutput(JSON.stringify(e.postData.contents)).setMimeType(
+    ContentService.MimeType.JAVASCRIPT
+  );
+};
+
+const saveDataToSpreadsheet = (obj) => {
+  try {
+    const data = JSON.parse(obj);
+    Logger.log(`saveDataToSpreadsheet(): ${JSON.stringify(data)}`);
+    Logger.log(`saveDataToSpreadsheet() name: ${data.Full_Name}`);
 
     const Agent = Tamotsu.Table.define({
       sheetName: data.sheetname,
@@ -30,8 +41,8 @@ const doPost = (e) => {
     });
 
     const lastRow = Agent.last();
-    Logger.log(`saveNewData() lastRow: ${JSON.stringify(lastRow)}`);
-    Logger.log(`saveNewData() lastRow number: ${JSON.stringify(lastRow.row_)}`);
+    Logger.log(`saveDataToSpreadsheet() lastRow: ${JSON.stringify(lastRow)}`);
+    Logger.log(`saveDataToSpreadsheet() lastRow number: ${JSON.stringify(lastRow.row_)}`);
 
     Agent.create({
       '#': lastRow['#'] + 1,
@@ -67,14 +78,12 @@ const doPost = (e) => {
       .getRange(`I${lastRow.row_}:I${lastRow.row_}`)
       .setValue('Opened');
   } catch (error) {
-    Logger.log(`saveNewData(): error ${error}`);
+    Logger.log(`saveDataToSpreadsheet(): error ${error}`);
   }
-  return ContentService.createTextOutput(JSON.stringify(e.postData.contents)).setMimeType(
-    ContentService.MimeType.JAVASCRIPT
-  );
 };
 
 module.exports = {
   doGet,
   doPost,
+  saveDataToSpreadsheet,
 };
