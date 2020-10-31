@@ -25,6 +25,7 @@
     <link href="https://unpkg.com/bootstrap-datepicker@1.9.0/dist/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
     <script src="https://unpkg.com/bootstrap-datepicker@1.9.0/dist/locales/bootstrap-datepicker.th.min.js" charset="UTF-8"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <style>
         body {
             font-family: 'Bai Jamjuree', sans-serif;
@@ -126,7 +127,7 @@
                     <a class="navbar-brand mx-auto" href="#">
                         <img src="https://www.blisstel.co.th/wp-content/uploads/2018/07/terra-e1531841401859.png" alt="Logo" />
                     </a>
-                    <center><h2>ระบบติดตามงาน Maintenance Service Agreement</h2></center>
+                    <center><h2>กรอกข้อมูลลูกค้า Maintenance Service Agreement</h2></center>
                    
                 </div>
             </div>
@@ -134,12 +135,29 @@
         <div class="container">
             <form id="myForm" @submit.prevent="submitForm">
                 <div class="form-group">
+                    <label for="net">NET</label>
+                    <select name="cars" id="cars" class="form-control form-control-lg" type="text" placeholder="NET" required>
+                    <option value="ais">AIS</option>
+                    <option value="true">TRUE</option>
+                    <option value="3bb">3BB</option>
+                    <option value="finet">FINET</option>
+                  </select>
+                </div>
+                <div class="form-group">
                     <label>Full Name</label>
                     <input class="form-control form-control-lg" name="Full_Name" type="text" placeholder="Full Name" required />
                 </div>
                 <div class="form-group">
                     <label>Address</label>
                     <input class="form-control form-control-lg" name="Address" type="text" placeholder="Address" required />
+                </div>
+                <div class="form-group">
+                    <label>NumberCircoit</label>
+                    <input class="form-control form-control-lg" name="NumberCircoit" type="text" placeholder="NumberCircoit" required />
+                </div>
+                <div class="form-group">
+                    <label>Building</label>
+                    <input class="form-control form-control-lg" name="Building" type="text" placeholder="Building" required />
                 </div>
                 <div class="form-group">
                     <label>Confirmation date</label>

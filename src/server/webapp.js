@@ -37,6 +37,8 @@ const doPost = (e) => {
       '#': lastRow['#'] + 1,
       'Full Name': data.Full_Name,
       Address: data.Address,
+      Building: data.Building,
+      NumberCircoit: data.NumberCircoit,
       'Confirmation date': data.Confirmation_date,
       'Confirmation time': data.Confirmation_time,
       'ยืนยัน ส่งLINE': '',
@@ -46,7 +48,7 @@ const doPost = (e) => {
     // Create new checkbox with initail value (false).
     SpreadsheetApp.getActive()
       .getSheetByName('AIS')
-      .getRange(`F${lastRow.row_}:F${lastRow.row_}`)
+      .getRange(`H${lastRow.row_}:H${lastRow.row_}`)
       .setDataValidation(
         SpreadsheetApp.newDataValidation().setAllowInvalid(false).requireCheckbox().build()
       );
@@ -54,7 +56,7 @@ const doPost = (e) => {
     // Create new dropdown list with values in list ['Opened', 'In Progress', 'Close'] and set initail value (Opened)
     SpreadsheetApp.getActive()
       .getSheetByName('AIS')
-      .getRange(`G${lastRow.row_}:G${lastRow.row_}`)
+      .getRange(`I${lastRow.row_}:I${lastRow.row_}`)
       .setDataValidation(
         SpreadsheetApp.newDataValidation()
           .requireValueInList(['Opened', 'In Progress', 'Close'])
@@ -62,7 +64,7 @@ const doPost = (e) => {
       );
     SpreadsheetApp.getActive()
       .getSheetByName('AIS')
-      .getRange(`G${lastRow.row_}:G${lastRow.row_}`)
+      .getRange(`I${lastRow.row_}:I${lastRow.row_}`)
       .setValue('Opened');
   } catch (error) {
     Logger.log(`saveNewData(): error ${error}`);

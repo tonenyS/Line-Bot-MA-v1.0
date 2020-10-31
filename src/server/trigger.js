@@ -14,13 +14,13 @@ export default function (e) {
     const editRow = editRange.getRow();
     const editCol = editRange.getColumn();
 
-    const range = sheet.getRange('F3:F');
+    const range = sheet.getRange('H3:H');
     const rangeRowStart = range.getRow();
     const rangeRowEnd = rangeRowStart + range.getHeight() - 1;
     const rangeColStart = range.getColumn();
     const rangeColEnd = rangeColStart + range.getWidth() - 1;
 
-    const range2 = sheet.getRange('G3:G');
+    const range2 = sheet.getRange('I3:I');
     const rangeRowStart2 = range2.getRow();
     const rangeRowEnd2 = rangeRowStart2 + range2.getHeight() - 1;
     const rangeColStart2 = range2.getColumn();
@@ -31,25 +31,30 @@ export default function (e) {
       editCol >= rangeColStart2 &&
       editCol <= rangeColEnd2
     ) {
-      const no = val[editRow - 1][editCol - 7];
-      const name = val[editRow - 1][editCol - 6];
-      const address = val[editRow - 1][editCol - 5];
-      const dateSend = val[editRow - 1][editCol - 4];
-      const timeSend = val[editRow - 1][editCol - 3];
+      const no = val[editRow - 1][editCol - 8];
+      const name = val[editRow - 1][editCol - 7];
+      const address = val[editRow - 1][editCol - 6];
+      const Building = val[editRow - 1][editCol - 5];
+      const NumberCircoit = val[editRow - 1][editCol - 4];
+      const dateSend = val[editRow - 1][editCol - 3];
+      const timeSend = val[editRow - 1][editCol - 2];
       const statusSend = val[editRow - 1][editCol - 1];
 
       // const linenotify = val[editRow - 1][editCol - 1];
-
+      // หมายเหตุ
       const msg =
+        'งานที่ Confirm  \n' +
         `ลำดับ : ${no}\n` +
         `ชื่อ-นามสกุล : ${name}\n` +
-        `ที่อยู่: ${address}\n` +
+        `ที่อยู่ : ${address}\n` +
+        `อาคาร : ${Building}\n` +
+        `เลข Circoit : ${NumberCircoit}\n` +
         `วันที่ยืนยัน : ${dateSend}\n` +
         `เวลาที่ยืนยัน : ${timeSend}\n` +
         `สถานะงาน : ${statusSend}`;
 
       const response = ui.alert(
-        `${'ยืนยันการ Confirm เพื่อส่ง Line ?'}\n${msg}`,
+        `${'ยืนยันการ Confirm งานเพื่อส่ง Line ?'}\n${msg}`,
         ui.ButtonSet.YES_NO
       );
       if (response === ui.Button.YES) {
@@ -70,26 +75,27 @@ export default function (e) {
       editCol >= rangeColStart &&
       editCol <= rangeColEnd
     ) {
-      const no = val[editRow - 1][editCol - 6];
-      const name = val[editRow - 1][editCol - 5];
-      const address = val[editRow - 1][editCol - 4];
+      const no = val[editRow - 1][editCol - 8];
+      const name = val[editRow - 1][editCol - 7];
+      const address = val[editRow - 1][editCol - 6];
+      const Building = val[editRow - 1][editCol - 5];
+      const NumberCircoit = val[editRow - 1][editCol - 4];
       const dateSend = val[editRow - 1][editCol - 3];
       const timeSend = val[editRow - 1][editCol - 2];
-      const statusSend = val[editRow - 1][editCol - 0];
-
       // const linenotify = val[editRow - 1][editCol - 1];
-
+      // line
       const msg =
         'งานที่ Confirm  \n' +
         `ลำดับ : ${no}\n` +
         `ชื่อ-นามสกุล : ${name}\n` +
-        `ที่อยู่: ${address}\n` +
+        `ที่อยู่ : ${address}\n` +
+        `อาคาร : ${Building}\n` +
+        `เลข Circoit : ${NumberCircoit}\n` +
         `วันที่ยืนยัน : ${dateSend}\n` +
-        `เวลาที่ยืนยัน : ${timeSend}\n` +
-        `สถานะงาน : ${statusSend}`;
+        `เวลาที่ยืนยัน : ${timeSend}`;
 
       const response = ui.alert(
-        `${'ยืนยันการ Confirm เพื่อส่ง Line ?'}\n${msg}`,
+        `${'ส่งสถานะงานปัจจุบัน ผ่านทาง Line ?'}\n${msg}`,
         ui.ButtonSet.YES_NO
       );
       if (response === ui.Button.YES) {
