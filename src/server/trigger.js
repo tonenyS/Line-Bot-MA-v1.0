@@ -31,13 +31,13 @@ export default function (e) {
       editCol >= rangeColStart2 &&
       editCol <= rangeColEnd2
     ) {
-      const no = val[editRow - 1][editCol - 8];
-      const name = val[editRow - 1][editCol - 7];
-      const address = val[editRow - 1][editCol - 6];
-      const Building = val[editRow - 1][editCol - 5];
-      const NumberCircoit = val[editRow - 1][editCol - 4];
-      const dateSend = val[editRow - 1][editCol - 3];
-      const timeSend = val[editRow - 1][editCol - 2];
+      const no = val[editRow - 1][editCol - 9];
+      const name = val[editRow - 1][editCol - 8];
+      const address = val[editRow - 1][editCol - 7];
+      const Building = val[editRow - 1][editCol - 6];
+      const NumberCircoit = val[editRow - 1][editCol - 5];
+      const dateSend = val[editRow - 1][editCol - 4];
+      const timeSend = val[editRow - 1][editCol - 3];
       const statusSend = val[editRow - 1][editCol - 1];
 
       // const linenotify = val[editRow - 1][editCol - 1];
