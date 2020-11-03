@@ -1,37 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ระบบติดตามงาน Terra-true 🎎</title>
-    <link rel="shortcut icon" type="image/x-icon" href="https://img.icons8.com/pastel-glyph/2x/search--v2.png" />
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@100&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
-    <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
-    <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css" />
-    <script src="https://unpkg.com/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>
-    <link href="https://unpkg.com/bootstrap-datepicker@1.9.0/dist/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
-    <script src="https://unpkg.com/bootstrap-datepicker@1.9.0/dist/locales/bootstrap-datepicker.th.min.js" charset="UTF-8"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
-    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-    <style>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ระบบติดตามงาน Terra-true 🎎</title>
+        <link rel="shortcut icon" type="image/x-icon"
+            href="https://scontent.fbkk9-2.fna.fbcdn.net/v/t1.0-9/123435232_3442359729178322_2536469852367443598_n.jpg?_nc_cat=109&ccb=2&_nc_sid=dbeb18&_nc_eui2=AeFsY_jbySKxO-5msTSIha3nhA1zmgj45tqEDXOaCPjm2h38DQa3lj178yZa3BnBzdNWLYolLT1IZ323Cv7BfFxs&_nc_ohc=rYHD3mcvEIsAX8CFfus&_nc_ht=scontent.fbkk9-2.fna&oh=4e719db7e3a3d56adee7681d147b5be0&oe=5FC4B909"
+            />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Sarabun:wght@100&display=swap"
+            rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200&display=swap"
+            rel="stylesheet" />
+        <link rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+            crossorigin="anonymous" />
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+        <link rel="stylesheet"
+            href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
+        <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <link rel="stylesheet"
+            href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css"
+            />
+        <script
+            src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <link rel="stylesheet" type="text/css"
+            href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css"
+            />
+        <script
+            src="https://unpkg.com/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>
+        <link
+            href="https://unpkg.com/bootstrap-datepicker@1.9.0/dist/css/bootstrap-datepicker3.min.css"
+            rel="stylesheet" />
+        <script
+            src="https://unpkg.com/bootstrap-datepicker@1.9.0/dist/locales/bootstrap-datepicker.th.min.js"
+            charset="UTF-8"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+        <script charset="utf-8"
+            src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+        <link rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+            integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+            crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+            crossorigin="anonymous"></script>
+        <style>
+            
         body {
             font-family: 'Bai Jamjuree', sans-serif;
         }
+        #logo{
+            height: 100%;
+            margin-top: 1px;
+            margin-right: 5px;
+        }
+        a {
+            font-family: "Times New Roman", Times, serif;
+        }
     </style>
-    <script>
+        <script>
         $(function() {
             $.fn.serializeJson = function() {
                 var o = {};
@@ -141,64 +207,153 @@
             });
         });
     </script>
-</head>
+    </head>
 
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-sm bg-white navbar-light">
-            <div class="mx-auto order-0">
-                <div class="d-flex flex-column">
-                    <a class="navbar-brand mx-auto" href="#">
-                        <img src="https://www.blisstel.co.th/wp-content/uploads/2018/07/terra-e1531841401859.png" alt="Logo" />
-                    </a>
-                    <center>
-                        <h2>กรอกข้อมูลลูกค้า Maintenance Service Agreement</h2>
-                    </center>
-                </div>
+    <body>
+        <nav class="navbar navbar-expand-sm navbar-dark fixed-top"
+            style="background-color: #2c4364;">
+            <a class="navbar-brand" href="#">FIRTMILE</a>
+            <button class="navbar-toggler d-lg-none" type="button"
+                data-toggle="collapse" data-target="#collapsibleNavId"
+                aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation"></button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">BuildingSerach</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="dropdown-item" href="#">Action 1</a>
+                            <a class="dropdown-item" href="#">Action 2</a>
+                        </div>
+                    </li> -->
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
             </div>
         </nav>
-        <div class="container p-5">
-            <form id="myForm" @submit.prevent="submitForm">
-                <div class="form-group">
-                    <label for="net">NET</label>
-                    <select name="sheetname" id="sheetname" class="form-control form-control-lg text-danger font-weight-bold" type="text" placeholder="NET" required>
-              <option value="AIS">AIS</option>
-              <option value="TRUE">TRUE</option>
-              <option value="3BB">3BB</option>
-              <option value="FINET">FINET</option>
-              <option value="TOT">TOT</option>
-            </select>
+
+        <div id="carouselId" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselId" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselId" data-slide-to="1"></li>
+                <li data-target="#carouselId" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <img src="https://www.hinicio.com/inc/uploads/2016/06/Wind-Turbines-Power-Generator-1900x500.jpg" alt="First slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Title</h3>
+                        <p>Description</p>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Full Name</label>
-                    <input class="form-control form-control-lg" name="Full_Name" type="text" placeholder="Full Name" required />
+                <div class="carousel-item">
+                    <img src="https://www.imsconsulting.com.au/wp-content/uploads/2018/11/Elizabeth-Quay-Panorama-1900x500.jpg" alt="Second slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Title</h3>
+                        <p>Description</p>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Address</label>
-                    <input class="form-control form-control-lg" name="Address" type="text" placeholder="Address" required />
+                <div class="carousel-item">
+                    <img src="https://secureservercdn.net/198.71.233.214/36d.dea.myftpupload.com/wp-content/uploads/2017/08/ny-1900x500.jpg" alt="Third slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Title</h3>
+                        <p>Description</p>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>NumberCircoit</label>
-                    <input class="form-control form-control-lg" name="NumberCircoit" type="text" placeholder="NumberCircoit" required />
-                </div>
-                <div class="form-group">
-                    <label>Building</label>
-                    <input class="form-control form-control-lg" name="Building" type="text" placeholder="Building" required />
-                </div>
-                <div class="form-group">
-                    <label>Confirmation date</label>
-                    <input class="form-control form-control-lg datepicker" name="Confirmation_date" type="text" placeholder="Confirmation date" data-provide="datepicker" data-provide="datepicker-inline" autocomplete="off" required />
-                </div>
-                <div class="form-group">
-                    <label>Confirmation time</label>
-                    <input class="form-control form-control-lg timepicker" name="Confirmation_time" type="text" placeholder="Confirmation time" autocomplete="off" required />
-                </div>
-                <button v-if="!issaving" type="submit" class="btn btn-primary">Send</button>
-                <button type="reset" class="btn btn-primary" value="Reset">Reset</button>
-            </form>
+            </div>
+            <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-        <br />
-    </div>
-</body>
+        <div id="app">
+            <nav class="navbar navbar-expand-sm bg-white navbar-light">
+                <div class="mx-auto order-0">
+                    <div class="d-flex flex-column"><br>
+                        <br><a class="navbar-brand mx-auto" href="#">
+
+                        </a>
+                        <center>
+                            <h2>กรอกข้อมูลลูกค้า Maintenance Service Agreement</h2>
+                        </center>
+                    </div>
+                </div>
+            </nav>
+            <div class="container p-5">
+                <form id="myForm" @submit.prevent="submitForm">
+                    <div class="form-group">
+                        <label for="net">NET</label>
+                        <select name="sheetname" id="sheetname"
+                            class="form-control form-control-lg text-danger
+                            font-weight-bold" type="text" placeholder="NET"
+                            required>
+                            <option value="AIS">AIS</option>
+                            <option value="TRUE">TRUE</option>
+                            <option value="3BB">3BB</option>
+                            <option value="FINET">FINET</option>
+                            <option value="TOT">TOT</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input class="form-control form-control-lg"
+                            name="Full_Name" type="text" placeholder="Full Name"
+                            required />
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input class="form-control form-control-lg"
+                            name="Address" type="text" placeholder="Address"
+                            required />
+                    </div>
+                    <div class="form-group">
+                        <label>NumberCircoit</label>
+                        <input class="form-control form-control-lg"
+                            name="NumberCircoit" type="text"
+                            placeholder="NumberCircoit" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Building</label>
+                        <input class="form-control form-control-lg"
+                            name="Building" type="text" placeholder="Building"
+                            required />
+                    </div>
+                    <div class="form-group">
+                        <label>Confirmation date</label>
+                        <input class="form-control form-control-lg datepicker"
+                            name="Confirmation_date" type="text"
+                            placeholder="Confirmation date"
+                            data-provide="datepicker"
+                            data-provide="datepicker-inline" autocomplete="off"
+                            required />
+                    </div>
+                    <div class="form-group">
+                        <label>Confirmation time</label>
+                        <input class="form-control form-control-lg timepicker"
+                            name="Confirmation_time" type="text"
+                            placeholder="Confirmation time" autocomplete="off"
+                            required />
+                    </div>
+                    <button v-if="!issaving" type="submit" class="btn
+                        btn-primary">Send</button>
+                    <button type="reset" class="btn btn-primary" value="Reset">Reset</button>
+                </form>
+            </div>
+            <br />
+        </div>
+        
+    </body>
 
 </html>
